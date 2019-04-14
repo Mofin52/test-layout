@@ -1,0 +1,188 @@
+.portal {
+    border: 1px solid #E6ECF2;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 15px 25px 15px 20px;
+    position: relative;
+    &.portal--active {
+        border-left: 4px solid #5A39A7;
+    }
+    &.portal--disabled, &.portal--inactive {
+        border-left: 4px solid #E6ECF2;
+    }
+    border-left: 4px solid red;
+    .portal-title {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        margin: 0 0 8px;
+        .portal-state {
+            display: flex;
+            font-weight: normal;
+            font-size: 13px;
+            margin: 0 0 0 -15px;
+            color: #d8d8d8;
+            li {
+                margin-right: 25px;
+            }
+        }
+    }
+    .portal-controls {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .portal-button {
+        border: 1px solid #E6ECF2;
+        border-radius: 4px;
+        font-size: 13px;
+        padding: 0 10px;
+        height: 28px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        .button-icon {
+            display: inline-block;
+            width: 9px;
+            height: 10px;
+            margin-right: 5px;
+            background: url('../../assets/css_sprites.png') -58px -10px;
+        }
+        &.button-synched {
+            color: white;
+            border-color: #5A39A7;
+            background-color: #5A39A7;
+            .button-icon {
+                background: url('../../assets/css_sprites.png') -87px -10px;
+            }
+        }
+        &.button-creatingPages {
+            .button-icon {
+                width: 12px;
+                height: 17px;
+                background: url('../../assets/updating.png');
+            }
+        }
+        &.badge {
+            color: white;
+            background-color: #FFAA30;
+            position: absolute;
+            bottom: 12px;
+            right: 19px;
+            border: none;
+            .button-icon {
+                width: 12px;
+                height: 14px;
+                background: url('../../assets/css_sprites.png') -116px -10px;
+            }
+        }
+    }
+
+    .portal-footer {
+        font-size: 13px;
+        color: #D8D8D8;
+        .footer-rate {
+            display: flex;
+            align-items: center;
+            .footer-rate-icon {
+                display: inline-block;
+                width: 16px;
+                height: 15px;
+                margin-right: 5px;
+            }
+            &.active {
+                color: #FFAA30;
+                .footer-rate-icon {
+                    background: url('../../assets/css_sprites.png') -184px -10px;
+                }
+            }
+            &.inactive {
+                .footer-rate-icon {
+                    background: url('../../assets/css_sprites.png') -148px -10px;
+                }
+            }
+            .footer-rate-text {
+                display: inline-block;
+                height: 14px;
+            }
+            ul {
+                margin: 1px 0 0 -15px;
+                color: #000;
+            }
+        }
+    }
+    .portal-menu {
+        position: absolute;
+        right: 19px;
+        top: 22px;
+        width: 4px;
+        height: 18px;
+        background: url('../../assets/css_sprites.png') -10px -10px;
+        cursor: pointer;
+        .menu-point {
+            position: absolute;
+            font-size: 16px;
+            color: #5A39A7;
+            border: 1px solid #E8E8E8;
+            border-radius: 4px;
+            background-color: white;
+            padding: 15px 0;
+            text-align: center;
+            width: 117px;
+            box-sizing: border-box;
+            top: 35px;
+            right: -28px;
+            visibility: hidden;
+            z-index: 20;
+            &::after {
+                content: '';
+                position: absolute;
+                top: -8px;
+                right: 20px;
+                width: 16px;
+                height: 16px;
+                background-color: white;
+                transform: rotate(45deg);
+                border-left: 1px solid #E8E8E8;
+                border-top: 1px solid #E8E8E8;
+            }
+        }
+        &:hover {
+            background: url('../../assets/css_sprites.png') -34px -10px;
+            .menu-point {
+                visibility: visible;
+            }  
+        }
+    }
+    .portal-updates {
+        position: absolute;
+        right: 20px;
+        bottom: 15px;
+        color: #5A39A7;
+        font-size: 13px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .portal {
+        .portal-controls {
+            display: block;
+            .portal-button {
+                width: 80%;
+                margin-bottom: 5px;
+            }
+        }
+        .portal-footer {
+            margin-bottom: 10px;
+            .footer-rate {
+                display: block;
+            }
+        }
+        .portal-title .portal-state {
+            display: block;
+        }
+        .portal-updates, .portal-button.badge {
+            position: static;
+        }
+    }
+}

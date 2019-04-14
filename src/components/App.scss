@@ -1,0 +1,26 @@
+body {
+    background-color: #eee;
+    font-family: 'Roboto', sans-serif;
+}
+
+body div {
+    box-sizing: border-box;
+}
+
+.app-container {
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 35px 65px;
+    background-color: #fff;
+    max-width: 1182px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+}
+//dots-inactive -     background: url('css_sprites.png') -10px -10px;
+//dots-active -     background: url('css_sprites.png') -34px -10px;
+//bell -     background: url('css_sprites.png') -116px -10px;
+//star-inactive -     background: url('css_sprites.png') -148px -10px;
+//star-active -     background: url('css_sprites.png') -184px -10px;
+//check -     background: url('css_sprites.png') -87px -10px;
+//check -     background: url('css_sprites.png') -58px -10px;
+
